@@ -1,0 +1,14 @@
+\newcounter{protwordcount}
+
+\makeatletter
+\newenvironment{protentry}[1]%
+    {%
+    \item[\proto{#1}]\hfill
+    \protected@edef\@currentlabelname{#1}%
+    \setcounter{definition}{0}%
+    \refstepcounter{protwordcount}%
+    \begin{description}[align=right,labelwidth=*,font=\normalfont]
+    }{%
+    \end{description}
+    }%
+\makeatother
