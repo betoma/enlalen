@@ -1,18 +1,18 @@
-\documentclass[a4paper,11pt,oneside,openany]{memoir}
+\documentclass[a4paper,11pt,twoside,openright]{memoir}
 
 \input{preamble/packages.tex}
 
 \setmainfont{Brill}
 
-\input{../utils/misc_macros.tex}
+\input{utils/misc_macros.tex}
 
-\input{../utils/ipa_macros.tex}
+\input{utils/ipa_macros.tex}
 
-\input{../utils/lingstyles.tex}
+\input{utils/lingstyles.tex}
 
 \lingset{lingstyle=default}
 
-\input{../utils/eurodate.tex}
+\input{utils/eurodate.tex}
 
 \input{preamble/leipzig.tex}
 
@@ -20,6 +20,18 @@
 %---------------------------
 
 \input{preamble/enl_macros.tex}
+
+\settrimmedsize{297mm}{210mm}{*}
+\setlength{\trimtop}{0pt}
+\setlength{\trimedge}{\stockwidth}
+\addtolength{\trimedge}{-\paperwidth}
+\settypeblocksize{634pt}{448.13pt}{*}
+\setulmargins{4cm}{*}{*}
+\setlrmargins{*}{*}{1.5}
+\setmarginnotes{17pt}{51pt}{\onelineskip}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{2\onelineskip}{*}
+\checkandfixthelayout
 
 \maxsecnumdepth{section}
 \maxtocdepth{subsection}
@@ -38,8 +50,6 @@
 \end{titlingpage}
 \frontmatter
 
-\input{../common/background.tex}
-
 \clearpage
 \tableofcontents
 
@@ -48,14 +58,15 @@
 \printnoidxglossary[type=\leipzigtype,title={Glossing Abbreviations}]
 
 \mainmatter
-
-\part{\parentlang{}}
-
-\include{gram/enlalen}
+\pagestyle{ruled}
 
 \part{Old Elvish}
 
 \include{gram/old_elv}
+
+\part{\parentlang{}}
+
+\include{gram/enlalen}
 
 \backmatter
 
